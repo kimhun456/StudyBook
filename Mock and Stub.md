@@ -27,7 +27,6 @@ stub을 사용하는 코드는 다음과 같다.</p>
 <pre><code>public interface MailService {
   public void send (Message msg);
 }
-
 public class MailServiceStub implements MailService {
   private List&lt;Message&gt; messages = new ArrayList&lt;Message&gt;();
   public void send (Message msg) {
@@ -40,7 +39,6 @@ public class MailServiceStub implements MailService {
 </code></pre>
 <p>We can then use state verification on the stub like this.</p>
 <pre><code>class OrderStateTester...
-
   public void testOrderSendsMailIfUnfilled() {
     Order order = new Order(TALISKER, 51);
     MailServiceStub mailer = new MailServiceStub();
